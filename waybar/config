@@ -4,14 +4,26 @@
         "reload_style_on_change": true,
         "modules-left": ["clock"],
         "modules-center": ["hyprland/workspaces"],
-        "modules-right": ["tray","wireplumber", "bluetooth","network","battery"],
+        "modules-right": ["tray","pulseaudio", "bluetooth","network","battery"],
 
 
-        "wireplumber": {
-            "format": "{icon} {volume}%",
-            "format-muted": "󰝟",
-            "format-icons": ["", "", ""],
-            "tooltip-format": "Volume: {volume}%"
+        "pulseaudio": {
+            "format": "{volume}% {icon}",
+            "format-bluetooth": "{volume}% {icon} {format_source}",
+            "format-bluetooth-muted": " {icon} {format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "{volume}% ",
+            "format-source-muted": "",
+            "format-icons": {
+                "headphone": "",
+                "hands-free": "",
+                "headset": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol"
         },
         "hyprland/workspaces": {
             "format": "{icon}",
